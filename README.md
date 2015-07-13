@@ -4,7 +4,8 @@ Reverse tethering routes traffic from the device via host gateway over USB.
 This allows the Android device to access the network through the host without
 depending on Wifi or Bluetooth.
 
-This method leverages VpnService API and **does not require root access**.
+This method leverages VpnService API, but needs to be signed system to bypass the Vpn consent popup.
+If you don't care about that, use original vpn-reverse-tether: https://github.com/google/vpn-reverse-tether/
 
 ## Technical details
 
