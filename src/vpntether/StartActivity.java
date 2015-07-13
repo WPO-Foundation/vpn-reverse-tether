@@ -24,6 +24,8 @@ import android.net.VpnService;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Method;
+
 import com.google.android.vpntether.R;
 
 /**
@@ -39,7 +41,28 @@ public class StartActivity extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     mServerSockName = getIntent().getStringExtra("SOCKNAME");
+
+	try{
+		ClassLoader cl = ClassLoader.getSystemClassLoader();
+		Class Stub = cl.loadClass("android.net.IConnectivityManager$Stub");
+		Method asInterface = Stub.getMethod("asInterface", android.os.IBinder.class);
+		Class ServiceManager = cl.loadClass("android.os.ServiceManager");
+
+		Method getService = ServiceManager.getMethod("getService", String.class);
+		Object realConnectivityManager = asInterface.invoke(Stub, getService.invoke(ServiceManager, "connectivity"));
+
+		Class iPm = cl.loadClass("android.net.IConnectivityManager");
+		Method m = iPm.getMethod("prepareVpn", String.class, String.class);
+		m.invoke(realConnectivityManager, null, "com.google.android.vpntether");
+
+        onActivityResult(0, RESULT_OK, null);
+		return;
+	} catch(Exception e) {
+		android.util.Log.w("VpnTether", "Self-VPN enable failed", e);
+	}
+
     Intent intent = VpnService.prepare(this);
+
     if (intent != null) {
       startActivityForResult(intent, 0);
     } else {
