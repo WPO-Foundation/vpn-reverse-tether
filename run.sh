@@ -20,7 +20,7 @@ LOCAL_ADDR_FORWARD=tcp:$LOCAL_PORT
   ;;
   unix)
 LOCAL_ADDR=/tmp/$ANDROID_SOCK
-LOCAL_ADDR_FORWARD=localabstract:$ANDROID_SOCK
+LOCAL_ADDR_FORWARD=localfilesystem:$LOCAL_ADDR
   ;;
 esac
 
