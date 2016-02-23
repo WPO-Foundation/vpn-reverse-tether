@@ -53,7 +53,9 @@ public class StartActivity extends Activity {
 
 		Class iPm = cl.loadClass("android.net.IConnectivityManager");
 		Method m = iPm.getMethod("prepareVpn", String.class, String.class);
-		m.invoke(realConnectivityManager, null, "com.google.android.vpntether");
+		Boolean res1 = (Boolean)m.invoke(realConnectivityManager, null, "com.android.systemui");
+		Boolean res2 = (Boolean)m.invoke(realConnectivityManager, "com.android.systemui", "com.google.android.vpntether");
+		android.util.Log.w("VpnTether", "prepareVpn gave " + res1 + " " + res2);
 
         onActivityResult(0, RESULT_OK, null);
 		return;
