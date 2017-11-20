@@ -17,8 +17,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:versionName="0.1" android:versionCode="1"
-		  package="com.google.android.vpntether"
-		  android:sharedUserId="android.uid.system">
+		  package="com.google.android.vpntether">
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19"/>
 
