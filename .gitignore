@@ -4,4 +4,4 @@ bin/
 gen/
 libs/
 obj/
-project.properties
+jni/forwarder
