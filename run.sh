@@ -11,7 +11,7 @@
 
 : ${SESSION_NAME:=$USER}  # Useful only for the notification.
 
-: ${MODE:=unix}
+: ${MODE:=tcp}
 
 case $MODE in
   tcp)
