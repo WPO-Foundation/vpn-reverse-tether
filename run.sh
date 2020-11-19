@@ -48,7 +48,7 @@ setup() {
   # sudo brctl addif $BRIDGE $EXT_DEV
 
   $ADB forward $LOCAL_ADDR_FORWARD localabstract:$ANDROID_SOCK
-  $ADB shell am start -n com.google.android.vpntether/vpntether.StartActivity -e SOCKNAME $ANDROID_SOCK
+  $ADB shell am start -n org.webpagetest.vpntether/.StartActivity -e SOCKNAME $ANDROID_SOCK
 }
 
 run() {

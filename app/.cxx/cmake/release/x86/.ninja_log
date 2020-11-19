@@ -1,0 +1,13 @@
+# ninja log v5
+0	5	0	clean	ffc0b71e667170f3
+0	6	0	clean	ffc0b71e667170f3
+0	5	0	clean	ffc0b71e667170f3
+0	5	0	clean	ffc0b71e667170f3
+1	100	1605801267	CMakeFiles/native-lib.dir/native-lib.cpp.o	4778013b45326cd7
+101	125	1605801267	/Users/Patrick/src/vpn-reverse-tether/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	f72737eda26ea9d8
+0	6	0	clean	ffc0b71e667170f3
+1	120	1605805246	CMakeFiles/native-lib.dir/native-lib.cpp.o	4778013b45326cd7
+120	148	1605805246	/Users/Patrick/src/vpn-reverse-tether/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	f72737eda26ea9d8
+0	5	0	clean	ffc0b71e667170f3
+1	106	1605805343	CMakeFiles/native-lib.dir/native-lib.cpp.o	4778013b45326cd7
+106	129	1605805344	/Users/Patrick/src/vpn-reverse-tether/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so	f72737eda26ea9d8
